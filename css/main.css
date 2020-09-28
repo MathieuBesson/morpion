@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+body {
+  background-color: #F7F7F7;
+}
+
+#morpion {
+  margin-top: 50px;
+}
+
+#morpion .title, #morpion .turn, #morpion .win-message {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 50px;
+}
+
+#morpion .title {
+  text-transform: uppercase;
+  font-size: 65px;
+}
+
+#morpion .turn {
+  font-size: 35px;
+}
+
+#morpion .win-message {
+  font-size: 42px;
+  color: #447210;
+}
+
+#morpion .border-table {
+  text-align: center;
+  margin: 50px 29.3% 0 29.3%;
+  border: 5px solid transparent;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 15px 55px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 15px 55px -6px rgba(0, 0, 0, 0.1);
+}
+
+#morpion .border-table table {
+  margin: 30px;
+  text-align: center;
+}
+
+#morpion .border-table table tr, #morpion .border-table table td {
+  font-family: 'Bowlby One SC', cursive;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  font-size: 105px;
+  cursor: pointer;
+  line-height: 0;
+  color: black;
+}
+
+#morpion .border-table table td:not(.playerX):not(.playerO):hover {
+  background-color: rgba(34, 34, 34, 0.1);
+}
+
+#morpion .border-table table td.playerX:hover, #morpion .border-table table td.playerO:hover {
+  background-color: #fcc1c1;
+}
+
+#morpion .border-table table tr:not(:first-child) {
+  border-top: 2.5px solid rgba(0, 0, 0, 0.1);
+}
+
+#morpion .border-table table tr:not(:last-child) {
+  border-bottom: 2.5px solid rgba(0, 0, 0, 0.1);
+}
+
+#morpion .border-table table td:not(:last-child) {
+  border-right: 2.5px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 992px) {
+  #morpion .border-table {
+    margin: 50px 30% 0 30%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #morpion .border-table {
+    margin: 50px 7% 0 7%;
+  }
+}
+
+.playerX span, .choice .btn-primary, .item-X {
+  background-image: linear-gradient(23deg, #2162e6 31%, #a8eedc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 22px 12px rgba(150, 150, 150, 0.2);
+}
+
+.playerO span, .choice .btn-secondary, .item-O {
+  background-image: linear-gradient(23deg, #ee6b33 31%, #f7da68 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 22px 12px rgba(150, 150, 150, 0.2);
+}
+
+.choice {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.choice .sentence {
+  font-size: 35px;
+}
+
+.choice h1 {
+  font-size: 55px;
+  text-transform: uppercase;
+  margin-bottom: 70px;
+}
+
+.choice .items {
+  text-align: center;
+}
+
+.choice button {
+  margin: 40px;
+}
+
+.choice button.btn {
+  border: 0.4rem solid transparent;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+  border-radius: 50%;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 150px;
+  line-height: 0;
+  height: 300px;
+  width: 300px;
+}
+
+.choice button.btn:hover {
+  border: 0.4rem solid;
+  border-radius: 50%;
+}
+
+.choice button.btn.btn-secondary:hover {
+  border-color: #ec8153;
+}
+
+.choice button.btn.btn-primary:hover {
+  border-color: #5183e7;
+}
+
+.choice p {
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
