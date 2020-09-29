@@ -22,7 +22,7 @@ Lien vers la version en ligne : https://mathieubesson-morpion.netlify.app/
 
 * Sass, Vanilla Javascript 
 * Template : https://bit.ly/3jeP8M1
-* Police Google Font
+* Polices Google Font
 
 ---
 
@@ -36,5 +36,5 @@ Lien vers la version en ligne : https://mathieubesson-morpion.netlify.app/
 
 ### Remerciements
 
-* Merci à KAlexandru Dranga pour son template de Tic Tac Toe
+* Merci à Alexandru Dranga pour son template de Tic Tac Toe
 * Et ... Merci de votre visite !
