@@ -1,7 +1,9 @@
 # Morpion (Tic Tac Toe)
 
 <p align="center">
-    <img src="https://mathieubesson-morpion.netlify.app/img/logo.png" alt="logo" width="200" height="200">
+    <a href="https://mathieubesson-morpion.netlify.app/">
+        <img src="https://mathieubesson-morpion.netlify.app/img/logo.png" alt="logo" width="200" height="200">
+    </a>
 </p>
 
 Le Morpion ou ( Tic Tac Toe) est un jeu ou les joueurs inscrivent tour à tour leur symbole sur une grille en 3 x 3. Le premier qui parvient à aligner trois de ses symboles horizontalement, verticalement ou en diagonale à gagner la partie.
