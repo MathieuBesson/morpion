@@ -15,6 +15,7 @@ Lien vers la version en ligne : https://mathieubesson-morpion.netlify.app/
 * Choix de l'item de jeu (X ou O)
 * Jeu multijoueurs
 * Indication du joueur courant
+* Jeu responsive
 
 ---
 
