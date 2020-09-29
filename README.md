@@ -1,12 +1,12 @@
-# Weather App
+# Morpion (Tic Tac Toe)
 
 <p align="center">
-    <img src="" alt="logo" width="200" height="200">
+    <img src="https://mathieubesson-morpion.netlify.app/img/logo.png" alt="logo" width="200" height="200">
 </p>
 
 Le Morpion ou ( Tic Tac Toe) est un jeu ou les joueurs inscrivent tour à tour leur symbole sur une grille en 3 x 3. Le premier qui parvient à aligner trois de ses symboles horizontalement, verticalement ou en diagonale à gagner la partie.
 
-Lien vers la version en ligne : 
+Lien vers la version en ligne : https://mathieubesson-morpion.netlify.app/ 
 
 ---
 
@@ -21,7 +21,7 @@ Lien vers la version en ligne :
 ## Outils
 
 * Sass, Vanilla Javascript 
-* Template : https://cdn.dribbble.com/users/1310166/screenshots/4239811/tictactoe-dribbble-small.jpg
+* Template : https://bit.ly/3jeP8M1
 * Police Google Font
 
 ---
