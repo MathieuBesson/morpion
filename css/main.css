@@ -1,54 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+.playerX span, .choice .X, .item-X, .playerO span, .choice .O, .item-O {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 22px 12px rgba(150, 150, 150, 0.2);
+}
+
+.choice button.O:hover, .choice button.X:hover {
+  border: 0.4rem solid;
+  border-radius: 50%;
+}
+
 body {
   background-color: #F7F7F7;
 }
 
 #morpion {
   margin-top: 50px;
-}
-
-#morpion .title, #morpion .turn, #morpion .win-message {
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
-  margin-bottom: 50px;
 }
 
 #morpion .title {
-  text-transform: uppercase;
+  font-family: "Quicksand", cursive;
+  text-align: center;
   font-size: 65px;
+  text-transform: uppercase;
 }
 
-#morpion .turn {
-  font-size: 35px;
+#morpion .turn, #morpion .sentence {
+  font-family: "Quicksand", cursive;
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 30px;
 }
 
 #morpion .win-message {
-  font-size: 42px;
+  font-family: "Quicksand", cursive;
+  text-align: center;
+  font-size: 50px;
   color: #447210;
 }
 
 #morpion .border-table {
-  text-align: center;
-  margin: 50px 29.3% 0 29.3%;
   border: 5px solid transparent;
-  background-color: white;
   border-radius: 15px;
+  margin: auto;
+  height: 450px;
+  width: 425px;
+  background-color: white;
   -webkit-box-shadow: 0px 15px 55px -6px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 15px 55px -6px rgba(0, 0, 0, 0.1);
 }
 
 #morpion .border-table table {
+  border-collapse: collapse;
   margin: 30px;
-  text-align: center;
 }
 
 #morpion .border-table table tr, #morpion .border-table table td {
-  font-family: 'Bowlby One SC', cursive;
+  font-family: "Bowlby One SC", cursive;
+  text-align: center;
+  font-size: 80px;
   width: 130px;
   height: 130px;
-  text-align: center;
-  font-size: 105px;
   cursor: pointer;
   line-height: 0;
   color: black;
@@ -58,7 +72,7 @@ body {
   background-color: rgba(34, 34, 34, 0.1);
 }
 
-#morpion .border-table table td.playerX:hover, #morpion .border-table table td.playerO:hover {
+#morpion .border-table table td[class^="player"]:hover {
   background-color: #fcc1c1;
 }
 
@@ -74,81 +88,70 @@ body {
   border-right: 2.5px solid rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 525px) {
   #morpion .border-table {
-    margin: 50px 30% 0 30%;
+    height: 425px;
+    width: 300px;
+  }
+  #morpion .border-table table {
+    margin: 10px;
+  }
+  #morpion .border-table table td {
+    width: 90px;
+  }
+  #morpion .choice button {
+    font-size: 85px;
+    height: 150px;
+    width: 150px;
+    margin: 15px;
+  }
+  #morpion .title {
+    font-size: 50px;
+  }
+  #morpion .turn {
+    font-size: 35px;
+  }
+  #morpion .sentence {
+    font-size: 30px;
+  }
+  #morpion .win-message {
+    font-size: 35px;
   }
 }
 
-@media screen and (max-width: 767px) {
-  #morpion .border-table {
-    margin: 50px 7% 0 7%;
-  }
-}
-
-.playerX span, .choice .btn-primary, .item-X {
+.playerX span, .choice .X, .item-X {
   background-image: linear-gradient(23deg, #2162e6 31%, #a8eedc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 22px 12px rgba(150, 150, 150, 0.2);
 }
 
-.playerO span, .choice .btn-secondary, .item-O {
+.playerO span, .choice .O, .item-O {
   background-image: linear-gradient(23deg, #ee6b33 31%, #f7da68 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 22px 12px rgba(150, 150, 150, 0.2);
 }
 
 .choice {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", cursive;
   text-align: center;
-}
-
-.choice .sentence {
   font-size: 35px;
 }
 
-.choice h1 {
-  font-size: 55px;
-  text-transform: uppercase;
-  margin-bottom: 70px;
-}
-
-.choice .items {
-  text-align: center;
-}
-
 .choice button {
-  margin: 40px;
-}
-
-.choice button.btn {
-  border: 0.4rem solid transparent;
-  -webkit-transition: ease-in 0.2s;
-  transition: ease-in 0.2s;
-  border-radius: 50%;
-  font-family: 'Bowlby One SC', cursive;
-  font-size: 150px;
   line-height: 0;
+  font-family: "Bowlby One SC", cursive;
+  text-align: center;
+  font-size: 150px;
+  border: 0.4rem solid transparent;
+  border-radius: 50%;
+  margin: 40px;
   height: 300px;
   width: 300px;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
 }
 
-.choice button.btn:hover {
-  border: 0.4rem solid;
-  border-radius: 50%;
-}
-
-.choice button.btn.btn-secondary:hover {
+.choice button.O:hover {
   border-color: #ec8153;
 }
 
-.choice button.btn.btn-primary:hover {
+.choice button.X:hover {
   border-color: #5183e7;
-}
-
-.choice p {
-  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

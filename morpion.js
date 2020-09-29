@@ -38,7 +38,7 @@ class Morpion {
 
     start() {
         this.displayItemChoice();
-        let choice = [document.querySelector('.btn-primary'), document.querySelector('.btn-secondary')];
+        let choice = [document.querySelector('.X'), document.querySelector('.O')];
         choice.map((item, index) => {
             item.addEventListener('click', (event) => {
                 this.stateGame = false;
@@ -68,8 +68,8 @@ class Morpion {
             'choice': { 'element': 'div', 'HTMLClass': 'choice' },
             'sentence': { 'element': 'p', 'HTMLClass': 'sentence', 'content': 'Pick Your side !' },
             'items': { 'element': 'div', 'HTMLClass': 'items' },
-            'itemJ1': { 'element': 'button', 'HTMLClass': 'btn btn-primary', 'content': this.players.items[0] },
-            'itemJ2': { 'element': 'button', 'HTMLClass': 'btn btn-secondary', 'content': this.players.items[1] },
+            'itemJ1': { 'element': 'button', 'HTMLClass': 'btn X', 'content': this.players.items[0] },
+            'itemJ2': { 'element': 'button', 'HTMLClass': 'btn O', 'content': this.players.items[1] },
         });
 
         createdElements.items.prepend(createdElements.itemJ1, createdElements.itemJ2);

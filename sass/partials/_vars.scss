@@ -1,0 +1,29 @@
+// Colors
+$primary-color-main: rgba(33,98,230,1);
+$primary-color-second: rgba(168,238,220,1);
+$primary-color-third: rgb(81, 131, 231);
+
+$secondly-color-main:rgba(238, 107, 51, 1);
+$secondly-color-second:rgba(247, 218, 104, 1);
+$secondly-color-third: rgb(236, 129, 83);
+
+$shadow-color-item: rgba(150, 150, 150, 0.2);
+$shadow-color-border-table: rgba(0,0,0,0.1);
+
+$bg-color : #F7F7F7;
+
+// Items
+$items:
+  "X" $primary-color-main $primary-color-second,
+  "O" $secondly-color-main $secondly-color-second;
+
+// Font 
+$primaryFontSize : 65px;
+$mediumFontSize : 50px;
+$secondaryFontSize : 45px;
+
+// Boxs
+$tableBox : 
+"tr" "first" "top",
+"tr" "last" "bottom",
+"td" "last" "right";

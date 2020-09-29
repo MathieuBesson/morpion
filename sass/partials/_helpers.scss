@@ -1,0 +1,54 @@
+// Placeholders
+%linearGradientItemsBackground{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 22px 12px $shadow-color-item;
+}
+
+%buttonHover{
+    border: 0.4rem solid;
+    border-radius: 50%;
+}
+
+
+// Mixins
+@mixin responsive($max-width, $width, $height) {
+    @media screen and (max-width: $max-width) {
+        .border-table{
+            height: $height;
+            width: $width;
+        }
+        .border-table table {
+            margin: 10px;
+            td{ width: 90px; }
+        }
+        .choice button{
+            font-size: 85px;
+            height: 150px;
+            width: 150px;
+            margin: 15px;
+        }
+        @each $name, $font in ("title" : $primaryFontSize, "turn" : $mediumFontSize, "sentence" : $secondaryFontSize, "win-message" : $mediumFontSize) {
+            .#{$name}{ font-size: $font - 15px; }
+        }
+    }
+}
+
+@mixin linearGradientItems($primary-color, $secondary-color) {
+    background-image: linear-gradient(23deg, $primary-color 31%, $secondary-color 100%);
+    @extend %linearGradientItemsBackground;
+}
+
+@mixin font($fontName, $fontSize){
+    font-family: $fontName, cursive;
+    text-align: center;
+    font-size: $fontSize;
+}
+
+@mixin dim($borderWidth, $borderRadius, $margin, $height, $width){
+    border: $borderWidth solid transparent;
+    border-radius: $borderRadius;
+    margin: $margin;
+    height: $height;
+    width: $width;
+}

@@ -1,45 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
+@import 'partials/vars';
+@import 'partials/helpers';
+
 body{
-    background-color: #F7F7F7;
+    background-color: $bg-color;
 }
+
 
 #morpion{
     margin-top: 50px;
-    .title, .turn, .win-message{
-        text-align: center;
-        font-family: 'Quicksand', sans-serif;
-        margin-bottom: 50px;
-    }
+    text-align: center;
     .title{
+        @include font('Quicksand', $primaryFontSize);
         text-transform: uppercase;
-        font-size: 65px;
     }
-    .turn{
-        font-size: 35px;
+    .turn, .sentence{
+        @include font('Quicksand', $secondaryFontSize);
+        margin-bottom: 30px;
     }
     .win-message{
-        font-size: 42px;
+        @include font('Quicksand', $mediumFontSize);
         color: rgb(68, 114, 16);
     }
     .border-table{
-        text-align: center;
-        margin:  50px 29.3% 0 29.3%;
-        border: 5px solid transparent;
+        @include dim(5px, 15px, auto, 450px, 425px);
         background-color: white;
-        border-radius: 15px;
-        box-shadow: 0px 15px 55px -6px rgba(0,0,0,0.1);
+        box-shadow: 0px 15px 55px -6px $shadow-color-border-table;
         table {
+            border-collapse: collapse;
             margin: 30px;
-            text-align: center;
-            // padding: 15px;
             tr, td{
-                font-family: 'Bowlby One SC', cursive;
+                @include font('Bowlby One SC', 80px);
                 width: 130px;
                 height: 130px;
-                text-align: center;
-                font-size: 105px;
                 cursor: pointer;
                 line-height: 0;
                 color: black;
@@ -47,102 +42,40 @@ body{
             td:not(.playerX):not(.playerO):hover{
                 background-color: rgba(34, 34, 34, 0.1);
             }
-            td.playerX:hover, td.playerO:hover{
+            td[class^="player"]:hover{
                 background-color: rgb(252, 193, 193);
             }
-            tr:not(:first-child){
-                border-top: 2.5px solid rgba(0,0,0, 0.1);
-            }
-            tr:not(:last-child){
-                border-bottom: 2.5px solid  rgba(0,0,0, 0.1);
-            }
-            td:not(:last-child){
-                border-right: 2.5px solid  rgba(0,0,0, 0.1);
-            }
-
+            @each $element, $position, $direction in ($tableBox) {
+                #{$element}:not(:#{$position}-child){
+                    border-#{$direction}: 2.5px solid $shadow-color-border-table;
+                }
+            } 
         }
     }
-    @media screen and (max-width: 992px) {
-        .border-table{
-            margin: 50px 30% 0 30%;
-        }
+    @include responsive(525px, 300px, 425px);
+}
+
+
+@each $name, $primary-color, $secondary-color in $items {
+    .player#{$name} span, .choice .#{$name}, .item-#{$name}{
+        @include linearGradientItems($primary-color, $secondary-color);
     }
-    @media screen and (max-width: 767px) {
-        .border-table{
-            margin: 50px 7% 0 7%;
-        }
-    }
-
 }
-
-$primary-color-main: rgba(33,98,230,1);
-$primary-color-second: rgba(168,238,220,1);
-$primary-color-third: rgb(81, 131, 231);
-
-$secondly-color-main:rgba(238, 107, 51, 1);
-$secondly-color-second:rgba(247, 218, 104, 1);
-$secondly-color-third: rgb(236, 129, 83);
-
-$shadow-color: rgba(150, 150, 150, 0.2);
-
-.playerX span, .choice .btn-primary, .item-X{
-    background-image: linear-gradient(23deg, $primary-color-main 31%, $primary-color-second 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 22px 12px $shadow-color;
-}
-.playerO span, .choice .btn-secondary, .item-O {
-    background-image: linear-gradient(23deg, $secondly-color-main 31%, $secondly-color-second 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0px 22px 12px $shadow-color;
-}
-
 
 
 .choice{
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-    .sentence{
-        font-size: 35px;
-    }
-    h1{
-        font-size: 55px;
-        text-transform: uppercase;
-        margin-bottom: 70px;
-    }
-    .items{
-        text-align: center;
-    }
+    @include font('Quicksand', 35px);
     button{
-        margin: 40px;
-        &.btn{
-            &:hover{
-                border: 0.4rem solid;
-                border-radius: 50%;
+        line-height: 0;
+        @include font('Bowlby One SC', 150px);
+        @include dim(0.4rem, 50%, 40px, 300px, 300px);
+        transition: ease-in 0.2s;
+        @each $name, $color in ("O" : $secondly-color-third, "X" : $primary-color-third) {
+            &.#{$name}:hover{
+                border-color:  $color;
+                @extend %buttonHover;
             }
-            &.btn-secondary{
-                &:hover{
-                    border-color:  $secondly-color-third;
-                }
-            }
-            &.btn-primary{
-                &:hover{
-                    border-color: $primary-color-third;
-                }
-            }
-            border: 0.4rem solid transparent;
-            transition: ease-in 0.2s;
-            border-radius: 50%;
-            font-family: 'Bowlby One SC', cursive;
-            font-size: 150px;
-            line-height: 0;
-            height: 300px;
-            width: 300px;
-        }
-    }
-    p{
-        text-align: center;
+        }        
     }
 }
 
